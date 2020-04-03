@@ -22,33 +22,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login', 'ApiController@login');
 Route::post('register', 'ApiController@register');
 
-
-Route::group(['middleware' => 'auth:api'], function () {
-Route::get('products', function() {
-    // If the Content-Type and Accept headers are set to 'application/json', 
-    // this will return a JSON structure. This will be cleaned up later.
-    return product::all();
-});
+Route::group(['middleware' => ['jwt.verify']], function() {
+Route::get('products', 'ProductController@index');
  
-Route::get('products/{id}', function($id) {
-    return product::find($id);
-});
+Route::get('products/{id}', 'ProductController@show');
 
-Route::post('products', function(Request $request) {
-    return product::create($request->all);
-});
+Route::post('products', 'ProductController@store');
 
-Route::put('products/{id}', function(Request $request, $id) {
-    $product = product::findOrFail($id);
-    $product->update($request->all());
+Route::put('products/{id}', 'ProductController@update');
 
-    return $product;
-});
-
-Route::delete('products/{id}', function($id) {
-    product::find($id)->delete();
-
-    return 204;
-});
-
+Route::delete('products/{id}','ProductController@delete');
 });
