@@ -12,7 +12,7 @@ class ProductsRepository implements ProductsRepositoryInterface
     //
     
     public function index () {
-        return product::all();
+        return product::paginate(5);
     }
 
     public function show($id){
