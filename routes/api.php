@@ -21,8 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('login', 'ApiController@login');
 Route::post('register', 'ApiController@register');
+Route::post('refresh','ApiController@refresh');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
+    
 Route::get('products', 'ProductController@index');
  
 Route::get('products/{id}', 'ProductController@show');

@@ -81,4 +81,9 @@ class ApiController extends Controller
  
         return response()->json(['user' => $user]);
     }
+
+    public function refresh(Request $request){
+            $token = auth('api')->refresh($request->token);
+        return response()->json(['token'=>$token]);
+    }
 }
