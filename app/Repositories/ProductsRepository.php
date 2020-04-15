@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Repositories;
-
+use App\Exceptions\ProductNotFoundException;
 use Illuminate\Http\Request;
 use App\product;
 use App\Repositories\Interfaces\ProductsRepositoryInterface;
@@ -16,7 +16,12 @@ class ProductsRepository implements ProductsRepositoryInterface
     }
 
     public function show($id){
-        return product::find($id);
+        $product =  product::find($id);
+        if(!$product){
+            throw new ProductNotFoundException('product not found');
+        }else{
+            return $product;
+        }
     }
 
     public function store(Request $request){

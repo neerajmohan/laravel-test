@@ -21,7 +21,11 @@ class ProductController extends Controller
     }
 
     public function show($id){
-        return $this->productsRepository->show($id);
+        try{
+            return $this->productsRepository->show($id);
+        }catch(ProductNotFoundException $exception){
+            report($exception);
+        }
     }
 
     public function store(Request $request){
