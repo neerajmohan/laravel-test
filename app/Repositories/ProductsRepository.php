@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Repositories;
+
+use App\Events\ProductUpdated;
 use App\Exceptions\ProductNotFoundException;
 use Illuminate\Http\Request;
 use App\product;
 use App\Repositories\Interfaces\ProductsRepositoryInterface;
-
+use Illuminate\Support\Facades\Auth;
 
 class ProductsRepository implements ProductsRepositoryInterface
 {
@@ -41,6 +43,7 @@ class ProductsRepository implements ProductsRepositoryInterface
         
     $product = product::findOrFail($id);
     $product->update($request->all());
+    ProductUpdated::dispatch(Auth::user()->name,$product->name);
 
     return $product;
     }
