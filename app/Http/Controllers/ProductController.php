@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Alaouy\Youtube\Facades\Youtube;
+
 use App\Repositories\Interfaces\ProductsRepositoryInterface;
 use Illuminate\Http\Request;
 use App\product;
@@ -42,4 +44,7 @@ class ProductController extends Controller
         return $this->productsRepository->delete($request,$id);
 
     }
+    public function youtube(Request $request){
+        return json_encode(Youtube::getVideoInfo(strval($request->data)));
+    }   
 }

@@ -24,6 +24,8 @@ Route::post('register', 'ApiController@register');
 Route::post('refresh','ApiController@refresh');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
+
+Route::get('getVideoDetails','ProductController@youtube');
     
 Route::get('products', 'ProductController@index');
  
