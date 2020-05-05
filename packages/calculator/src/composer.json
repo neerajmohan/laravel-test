@@ -1,0 +1,6 @@
+{
+    "name": "neeraj/calculator",
+    "description": "custom laravel package for image manipulation",
+    "minimum-stability": "dev",
+    "require": {}
+}

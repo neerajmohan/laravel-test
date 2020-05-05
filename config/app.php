@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         Alaouy\Youtube\YoutubeServiceProvider::class,
+        neeraj\calculator\CalculatorServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -37,7 +37,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "neeraj\\calculator\\":"packages/calculator/src"
         },
         "classmap": [
             "database/seeds",
