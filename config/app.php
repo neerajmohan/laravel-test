@@ -169,6 +169,7 @@ return [
          */
         Alaouy\Youtube\YoutubeServiceProvider::class,
         neeraj\calculator\CalculatorServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -233,6 +234,7 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
     'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,    
     'Youtube' => Alaouy\Youtube\Facades\Youtube::class,
+    'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

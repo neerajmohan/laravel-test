@@ -18,7 +18,17 @@ use App\product;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('image', function()
+{
+    $img = Image::make('C:\postgres+laravel\crud\public\foo.png')->resize(300, 200);
+    $img->save('C:\postgres+laravel\crud\public\bar.jpg');
 
+    // return $img->response('jpg');
+    // $img->stream(); // <-- Key point
+
+    //dd();
+    // Storage::disk('local')->put('resizefoo.png', $img);
+});
 Route::post('login', 'ApiController@login');
 Route::post('register', 'ApiController@register');
 Route::post('refresh','ApiController@refresh');
