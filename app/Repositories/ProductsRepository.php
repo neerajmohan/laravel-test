@@ -2,10 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Models\Product\product;
 use App\Events\ProductUpdated;
 use App\Exceptions\ProductNotFoundException;
 use Illuminate\Http\Request;
-use App\product;
 use App\Repositories\Interfaces\ProductsRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 

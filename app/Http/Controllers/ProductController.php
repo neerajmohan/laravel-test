@@ -6,7 +6,7 @@ use Alaouy\Youtube\Facades\Youtube;
 
 use App\Repositories\Interfaces\ProductsRepositoryInterface;
 use Illuminate\Http\Request;
-use App\product;
+use App\Models\Product\product;
 
 class ProductController extends Controller
 {

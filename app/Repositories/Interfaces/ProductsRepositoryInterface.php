@@ -3,7 +3,7 @@
 namespace App\Repositories\Interfaces;
 
 use Illuminate\Http\Request;
-use App\product;
+use App\Models\Product\product;
 
 interface ProductsRepositoryInterface
 {

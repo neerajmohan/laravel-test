@@ -170,6 +170,7 @@ return [
         Alaouy\Youtube\YoutubeServiceProvider::class,
         neeraj\calculator\CalculatorServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Vimeo\Laravel\VimeoServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -235,6 +236,7 @@ return [
     'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,    
     'Youtube' => Alaouy\Youtube\Facades\Youtube::class,
     'Image' => Intervention\Image\Facades\Image::class,
+    'Vimeo' => Vimeo\Laravel\Facades\Vimeo::class,
 
     ],
 
